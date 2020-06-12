@@ -10,17 +10,19 @@ function AddTransactions() {
 
 
     const [TransactionNotes, setNotes] = useState('')
-    console.log(TransactionNotes,'Transation Notes Has Been Cleared');
+    console.log(TransactionNotes, 'Transation Notes Has Been Cleared');
     const [TransactionAmount, setAmount] = useState(0.00)
-    console.log(TransactionAmount,'Transation Amount Has Been Cleared');
+    console.log(TransactionAmount, 'Transation Amount Has Been Cleared');
+
+    const add = () => {
 
     const newTransactionObject = {
-        Note: TransactionNotes,
-        Amount: Number(TransactionAmount)
-    }
-
-    function add() {
+            Note: TransactionNotes,
+            Amount: Number(TransactionAmount)
+        }
         addTransaction(newTransactionObject)
+        setNotes('')
+        setAmount('')
     }
 
     return (
@@ -28,11 +30,11 @@ function AddTransactions() {
 
             <h3>Add Transactions</h3>
 
-            <input type='text' placeholder='Enter Notes' required='required' value={TransactionNotes} onChange={(TransactionNotes) => setNotes(TransactionNotes.target.value)} />
+            <input type='text' placeholder='Enter Notes' required='required' value={TransactionNotes} onChange={(e) => setNotes(e.target.value)} />
             <br />
-            <input required='required' type='number' placeholder='Enter Amount' value={TransactionAmount} onChange={(TransactionAmount) => setAmount(TransactionAmount.target.value)} />
+            <input required='required' type='number' placeholder='Enter Amount' value={TransactionAmount} onChange={(e) => setAmount(e.target.value)} />
             <br />
-            <button onClick={() => add()}>Add This Transaction</button>
+            <button onClick={add}>Add This Transaction</button>
 
         </div>
     );

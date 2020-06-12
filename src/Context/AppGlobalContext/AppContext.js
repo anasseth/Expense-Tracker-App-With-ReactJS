@@ -14,6 +14,18 @@ const TransactionData = {
         {
             Note: 'CashFlow',
             Amount: -20,
+        }, {
+            Note: 'CashFlow',
+            Amount: 100,
+        }, {
+            Note: 'CashFlow',
+            Amount: 100,
+        }, {
+            Note: 'CashFlow',
+            Amount: 100,
+        }, {
+            Note: 'CashFlow',
+            Amount: 100,
         },
     ],
 }
@@ -23,10 +35,11 @@ export const TransactionDataContext = createContext(TransactionData);
 function AppContext({ children }) {
 
     const [data, dispatch] = useReducer(AppReducer, TransactionData)
-    console.log(data , 'Iam in AppContext line # 24')
+    console.log(data, 'Iam in AppContext line # 24')
 
     function deleteTransaction(id) {
         console.log('Reached inside delete-TRANSACTION in App-Context')
+        console.log(id)
         dispatch({
             type: 'DELETE-TRANSACTION',
             contentID: id
@@ -42,7 +55,7 @@ function AppContext({ children }) {
     }
 
     return (
-        <TransactionDataContext.Provider value={{ Transaction: data.Transaction,addTransaction,deleteTransaction }}>
+        <TransactionDataContext.Provider value={{ Transaction: data.Transaction, addTransaction, deleteTransaction }}>
             {children}
         </TransactionDataContext.Provider>
     )

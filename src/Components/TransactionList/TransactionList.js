@@ -9,9 +9,9 @@ function TransactionList() {
 
     console.log(Transaction)
 
-    function remove(event) {
-        event.preventDefault()
-        let idOfTransaction = event.target.id
+    const remove = e =>{
+        e.preventDefault()
+        let idOfTransaction = e.target.id
         deleteTransaction(idOfTransaction)
     }
 
@@ -19,7 +19,7 @@ function TransactionList() {
         <div className="Header">
 
             <h3>Transaction List</h3>
-            {Transaction.map((value, index) => <li id={index} className={(value.Amount > 0) ? 'green' : 'red'}>{value.Note}<b>{(value.Amount > 0) ? '+' : '-'}${Math.abs(value.Amount)}</b><button id={index} onClick={(event) => remove(event)}>X</button></li>)}
+            {Transaction.map((value, index) => <li onClick={(e)=>deleteTransaction(e.target.id)} id={index} className={(value.Amount > 0) ? 'green' : 'red'}>{value.Note}<b>{(value.Amount > 0) ? '+' : '-'}${Math.abs(value.Amount)}</b></li>)}
 
         </div>
     );
