@@ -1,11 +1,11 @@
 import React, { createContext, useReducer } from 'react';
-import AppReducer from './AppReducer';
+import AppReducer from '../Reducer/AppReducer';
 
 const TransactionData = {
+    Transaction: [],
     Balance: 0,
     Income: 0,
     Expense: 0,
-    Transaction: [],
 }
 
 function AppContext({ children }) {
@@ -27,7 +27,7 @@ function AppContext({ children }) {
     }
 
     return (
-        <TransactionDataContext.Provider value={data.TransactionData, addTransaction, deleteTransaction}>
+        <TransactionDataContext.Provider value={{transactions:data , addTransaction, deleteTransaction}}>
             {children}
         </TransactionDataContext.Provider>
     )
