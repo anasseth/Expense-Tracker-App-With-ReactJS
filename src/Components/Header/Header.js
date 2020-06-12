@@ -6,7 +6,9 @@ import './Header.modules.css';
 function Header() {
   return (
     <div className="Header">
+    
      Track Your Expense
+    
     </div>
   );
 }
