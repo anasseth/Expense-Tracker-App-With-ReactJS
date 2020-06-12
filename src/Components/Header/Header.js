@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.modules.css';
+import logolo from './logolo1.png'
 
 
 
@@ -7,7 +8,7 @@ function Header() {
   return (
     <div className="Header">
     
-     Track Your Expense
+    <img src={logolo} />
     
     </div>
   );

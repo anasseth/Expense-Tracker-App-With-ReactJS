@@ -4,28 +4,16 @@ import AppReducer from '../Reducer/AppReducer';
 const TransactionData = {
     Transaction: [
         {
-            Note: 'CashFlow',
-            Amount: 100,
+            Note: 'Restuarant Bill',
+            Amount: -123,
         },
         {
-            Note: 'CashFlow',
-            Amount: 100,
+            Note: 'Re-Fueling',
+            Amount: -100,
         },
         {
-            Note: 'CashFlow',
-            Amount: -20,
-        }, {
-            Note: 'CashFlow',
-            Amount: 100,
-        }, {
-            Note: 'CashFlow',
-            Amount: 100,
-        }, {
-            Note: 'CashFlow',
-            Amount: 100,
-        }, {
-            Note: 'CashFlow',
-            Amount: 100,
+            Note: 'WeeklyIncome',
+            Amount: 1250,
         },
     ],
 }

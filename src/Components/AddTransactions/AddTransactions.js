@@ -16,7 +16,7 @@ function AddTransactions() {
 
     const add = () => {
 
-    const newTransactionObject = {
+        const newTransactionObject = {
             Note: TransactionNotes,
             Amount: Number(TransactionAmount)
         }
@@ -26,12 +26,14 @@ function AddTransactions() {
     }
 
     return (
-        <div className="Header">
+        <div className="AddTransactionBox">
 
-            <h3>Add Transactions</h3>
-
+            <h3 className='AddTransaction'>Add Transactions</h3>
+Notes:
             <input type='text' placeholder='Enter Notes' required='required' value={TransactionNotes} onChange={(e) => setNotes(e.target.value)} />
             <br />
+      Amount:<br />
+      (Negative - Expense, Positive + Income)
             <input required='required' type='number' placeholder='Enter Amount' value={TransactionAmount} onChange={(e) => setAmount(e.target.value)} />
             <br />
             <button onClick={add}>Add This Transaction</button>

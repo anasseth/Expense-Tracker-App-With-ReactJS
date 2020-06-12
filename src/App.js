@@ -13,13 +13,14 @@ function App() {
   return (
     <AppContext>
       <div className="App">
+        <div className='AppCompBox'>
+          <Header />
+          <BalanceTiles />
+          <IncomeExpenseTiles />
+          <TransactionList />
+          <AddTransactions />
 
-        <Header />
-        <BalanceTiles />
-        <IncomeExpenseTiles />
-        <TransactionList />
-        <AddTransactions />
-
+        </div>
       </div>
     </AppContext>
   );

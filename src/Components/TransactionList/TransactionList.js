@@ -16,10 +16,11 @@ function TransactionList() {
     }
 
     return (
-        <div className="Header">
+        <div >
 
-            <h3>Transaction List</h3>
-            {Transaction.map((value, index) => <li onClick={(e)=>deleteTransaction(e.target.id)} id={index} className={(value.Amount > 0) ? 'green' : 'red'}>{value.Note}<b>{(value.Amount > 0) ? '+' : '-'}${Math.abs(value.Amount)}</b></li>)}
+            <h3 className="TransactionList">Transaction List</h3>
+            <li className='Hint'><i class="fas fa-lightbulb"></i> Hint ! To Remove Transaction DoubleClick it...</li>
+            {Transaction.map((value, index) => <li onDoubleClick={(e)=>deleteTransaction(e.target.id)} id={index} className={(value.Amount > 0) ? 'green' : 'red'}>{value.Note}<b className='amount'>{(value.Amount > 0) ? '+' : '-'}${Math.abs(value.Amount)}</b></li>)}
 
         </div>
     );

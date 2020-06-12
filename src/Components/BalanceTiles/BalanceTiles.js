@@ -17,10 +17,10 @@ function BalanceTiles() {
 
 
   return (
-    <div className="BalanceTiles">
+    <div className="BalanceBox">
       YOUR CURRENT BALANCE
       <br />
-     ${sum}
+     <b>${sum}</b>
     </div>
   );
 }

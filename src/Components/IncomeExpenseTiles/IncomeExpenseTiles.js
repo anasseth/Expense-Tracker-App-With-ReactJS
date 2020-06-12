@@ -29,13 +29,17 @@ function IncomeExpenseTiles() {
   return (
     <div className="IncomeExpenseTiles">
 
-      <div>
+      <div className='IETiles G'>
         INCOME
+        <br />
+        <b className='TIBlogo'><i class="fas fa-briefcase"></i></b>
         <br />
         <b>${Income}</b>
       </div>
-      <div>
+      <div className='IETiles R'>
         EXPENSE
+        <br />
+        <b className='TIBlogo'><i class="fas fa-money-bill-wave"></i></b>
         <br />
         <b>${Expense}</b>
       </div>

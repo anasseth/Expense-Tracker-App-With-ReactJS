@@ -1,0 +1,13 @@
+.BalanceBox{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 300px;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    border-left: lightgrey solid 1px;
+    border-right: lightgrey solid 1px;
+    transition-duration: 0.3s;
+    background-color: #F7F7F7;
+    box-shadow: 10px 10px 28px -18px rgba(0, 0, 0, 0.75);
+}

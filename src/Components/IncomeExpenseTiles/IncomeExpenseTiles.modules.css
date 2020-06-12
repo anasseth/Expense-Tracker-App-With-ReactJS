@@ -1,0 +1,30 @@
+.IncomeExpenseTiles{
+    display:flex;
+    flex-wrap: wrap;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    }
+    .IETiles{
+        height:auto;
+        color:white;
+        width:40%;
+        border-radius: 8px;
+        margin-top:5px;
+        box-shadow: 10px 10px 28px -18px rgba(0, 0, 0, 0.75);
+        padding: 20px;
+        color: white;
+    }
+    .TIBlogo {
+        font-size: 30px;
+    }
+    .G {
+        /* background-color:#28A745; */
+        background-image: linear-gradient(90deg, #28A745, #28A745, #28A745, rgb(87, 212, 116));
+    }
+    
+    .R {
+        /* background-color:#DC3545; */
+        background-image: linear-gradient(90deg, #DC3545, #DC3545, #DC3545, rgb(231, 126, 138));
+    }
