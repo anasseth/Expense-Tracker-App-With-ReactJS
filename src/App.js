@@ -4,21 +4,24 @@ import BalanceTiles from './Components/BalanceTiles/BalanceTiles.js';
 import IncomeExpenseTiles from './Components/IncomeExpenseTiles/IncomeExpenseTiles';
 import TransactionList from './Components/TransactionList/TransactionList'
 import AddTransactions from './Components/AddTransactions/AddTransactions'
+import AppContext from './Context/AppGlobalContext/AppContext'
 import './App.modules.css';
 
 
 
 function App() {
   return (
-    <div className="App">
-      
-      <Header />
-      <BalanceTiles />
-      <IncomeExpenseTiles />
-      <TransactionList />
-      <AddTransactions />
+    <AppContext>
+      <div className="App">
 
-    </div>
+        <Header />
+        <BalanceTiles />
+        <IncomeExpenseTiles />
+        <TransactionList />
+        <AddTransactions />
+
+      </div>
+    </AppContext>
   );
 }
 

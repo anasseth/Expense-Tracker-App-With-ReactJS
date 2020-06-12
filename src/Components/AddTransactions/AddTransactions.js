@@ -1,27 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './AddTransactions.modules.css';
-
+import { TransactionDataContext } from '../../Context/AppGlobalContext/AppContext.js';
 
 
 function AddTransactions() {
 
-    {/* Beginning with the Hooks */ }
+    const { addTransaction } = useContext(TransactionDataContext)
+    const { Transaction } = useContext(TransactionDataContext)
 
-    const [Notes, setNotes] = useState('')
-    console.log(Notes);
-    const [Amount, setAmount] = useState(0.00)
-    console.log(Amount);
+
+    const [TransactionNotes, setNotes] = useState('')
+    console.log(TransactionNotes,'Transation Notes Has Been Cleared');
+    const [TransactionAmount, setAmount] = useState(0.00)
+    console.log(TransactionAmount,'Transation Amount Has Been Cleared');
+
+    const newTransactionObject = {
+        Note: TransactionNotes,
+        Amount: Number(TransactionAmount)
+    }
+
+    function add() {
+        addTransaction(newTransactionObject)
+    }
 
     return (
         <div className="Header">
 
             <h3>Add Transactions</h3>
 
-            <input type='text' placeholder='Enter Notes' value={Notes} onChange={(Notes) => setNotes(Notes.target.value)} />
+            <input type='text' placeholder='Enter Notes' required='required' value={TransactionNotes} onChange={(TransactionNotes) => setNotes(TransactionNotes.target.value)} />
             <br />
-            <input type='number' placeholder='Enter Amount' value={Amount} onChange={(Amount) => setAmount(Amount.target.value)} />
+            <input required='required' type='number' placeholder='Enter Amount' value={TransactionAmount} onChange={(TransactionAmount) => setAmount(TransactionAmount.target.value)} />
             <br />
-            <button>Add This Transaction</button>
+            <button onClick={() => add()}>Add This Transaction</button>
 
         </div>
     );
